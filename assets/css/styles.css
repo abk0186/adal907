@@ -431,10 +431,13 @@ h3 { font-size: 1.12rem; font-weight: 800; letter-spacing: -0.02em; }
   overflow: hidden;
 }
 .video-card video {
+  display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 9 / 16;
+  max-height: min(72vh, 800px);
+  margin-inline: auto;
   background: #111;
-  object-fit: cover;
+  object-fit: contain;
 }
 .video-card p { margin: 0; padding: 12px 14px 14px; font-weight: 700; }
 
