@@ -25,13 +25,6 @@
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/styles.css">
-  <script type="importmap">
-  {
-    "imports": {
-      "three": "./assets/vendor/three/three.module.min.js"
-    }
-  }
-  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -48,7 +41,7 @@
   </script>
 </head>
 <body id="top">
-  <a class="skip" href="#model">К модели</a>
+  <a class="skip" href="#photo">К фото</a>
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="logo" href="#top" aria-label="ADAL MODEL 907">
@@ -95,20 +88,9 @@
           </div>
         </div>
 
-        <div class="viewer" id="model">
-          <div class="stage" id="stage">
-            <img class="fallback" src="assets/img/rear.webp" width="864" height="1152" alt="Мини-погрузчик ADAL MODEL 907, вид сзади">
-            <canvas aria-label="Интерактивная 3D-модель мини-погрузчика ADAL MODEL 907. Можно вращать и приближать."></canvas>
-            <p class="stage-badge">3D</p>
-          </div>
-          <div class="stage-controls">
-            <p class="hint">Крутите мышью или пальцем во все стороны. Колёсико или щипок — масштаб. В покое модель медленно вращается сама.</p>
-            <div class="stage-actions">
-              <button type="button" class="btn btn-ghost" id="btn-boom" aria-pressed="false">Поднять ковш</button>
-              <button type="button" class="btn btn-ghost" id="btn-artic" aria-pressed="false">Излом рамы</button>
-            </div>
-          </div>
-        </div>
+        <figure class="hero-photo" id="photo">
+          <img src="assets/img/boom-adal.webp" width="864" height="1152" alt="Стрела мини-погрузчика ADAL MODEL 907: белая надпись ADAL и красная плашка MODEL 907 на сером металле">
+        </figure>
       </div>
     </section>
 
@@ -130,7 +112,7 @@
           <article class="card">
             <span class="card-index">03</span>
             <h3>Дизель 25 л.с.</h3>
-            <p>Двигатель Changjia CJ32M, 25&nbsp;л.с. (около 18,4&nbsp;кВт). Стоит дополнительный радиатор охлаждения. Гидравлика с рычагами — под навесное оборудование.</p>
+            <p>Двигатель Changjia CJ32M, 25&nbsp;л.с. (около 18,4&nbsp;кВт). Охлаждение через радиатор и дополнительный радиатор. Гидравлика с рычагами — под навесное оборудование.</p>
           </article>
           <article class="card">
             <span class="card-index">04</span>
@@ -151,17 +133,47 @@
           <div class="stat"><b>25 л.с.</b><span>дизель Changjia</span></div>
           <div class="stat"><b>0,3 м³</b><span>ковш, около</span></div>
         </div>
-        <dl class="specs">
-          <div><dt>Грузоподъёмность</dt><dd>500 кг</dd></div>
-          <div><dt>Высота выгрузки</dt><dd>2,9 м</dd></div>
-          <div><dt>Ковш</dt><dd>около 0,3 м³</dd></div>
-          <div><dt>Двигатель</dt><dd>Changjia CJ32M, дизель</dd></div>
-          <div><dt>Мощность</dt><dd>25 л.с. (≈ 18,4 кВт)</dd></div>
-          <div><dt>Рама</dt><dd>шарнирно-сочленённая</dd></div>
-          <div><dt>Охлаждение</dt><dd>дополнительный радиатор</dd></div>
-          <div><dt>Гидравлика</dt><dd>рычаги под навесное оборудование</dd></div>
-          <div><dt>Наличие</dt><dd>Астана</dd></div>
-        </dl>
+        <div class="spec-groups">
+          <section class="spec-group">
+            <h3>Двигатель</h3>
+            <dl class="specs">
+              <div><dt>Модель</dt><dd>Changjia CJ32M, дизель</dd></div>
+              <div><dt>Мощность</dt><dd>25 л.с. (≈ 18,4 кВт)</dd></div>
+              <div><dt>Охлаждение</dt><dd>радиатор и дополнительный радиатор</dd></div>
+              <div><dt>Зимний запуск</dt><dd>предпусковой подогреватель от сети 220 В</dd></div>
+            </dl>
+          </section>
+          <section class="spec-group">
+            <h3>Трансмиссия и привод</h3>
+            <dl class="specs">
+              <div><dt>Привод</dt><dd>полный, 4×4</dd></div>
+              <div><dt>Колёса</dt><dd>гидромоторы, гидравлический привод</dd></div>
+              <div><dt>Рама</dt><dd>шарнирно-сочленённая</dd></div>
+            </dl>
+          </section>
+          <section class="spec-group">
+            <h3>Гидравлика</h3>
+            <dl class="specs">
+              <div><dt>Навесное</dt><dd>рычаги под оборудование</dd></div>
+              <div><dt>Привод колёс</dt><dd>через гидромоторы</dd></div>
+            </dl>
+          </section>
+          <section class="spec-group">
+            <h3>Электрика</h3>
+            <dl class="specs">
+              <div><dt>Аккумуляторы</dt><dd>два</dd></div>
+            </dl>
+          </section>
+          <section class="spec-group">
+            <h3>Рабочие параметры</h3>
+            <dl class="specs">
+              <div><dt>Грузоподъёмность</dt><dd>500 кг</dd></div>
+              <div><dt>Высота выгрузки</dt><dd>2,9 м</dd></div>
+              <div><dt>Ковш</dt><dd>около 0,3 м³</dd></div>
+              <div><dt>Наличие</dt><dd>Астана</dd></div>
+            </dl>
+          </section>
+        </div>
         <p class="note">Сенозахват в базовый комплект не входит. Другое навесное под гидравлические рычаги обсуждается отдельно.</p>
       </div>
     </section>
@@ -171,76 +183,52 @@
         <h2>Фото</h2>
         <p class="section-lead">Серийные машины — серый графит, на корпусе ADAL MODEL 907. Оранжевые кадры ниже — заводской образец: по ним видно ковш, шарнир, руль и двигатель. Цвет серии другой.</p>
 
-        <div class="gallery-block">
-          <p class="gallery-label">Серийные машины</p>
-          <div class="gallery">
-            <figure class="shot">
-              <button type="button"><img src="assets/img/rear.webp" width="864" height="1152" alt="Вид сзади: бампер, фары и декаль ADAL MODEL 907"></button>
-              <figcaption>Вид сзади: бампер, фары и декаль ADAL MODEL 907</figcaption>
-            </figure>
-            <figure class="shot">
-              <button type="button"><img src="assets/img/boom-adal.webp" width="864" height="1152" alt="Стрела с надписью ADAL и красной плашкой MODEL 907"></button>
-              <figcaption>Стрела: ADAL и красная плашка MODEL 907</figcaption>
-            </figure>
-            <figure class="shot">
-              <button type="button"><img src="assets/img/cabin-phone.webp" width="864" height="1152" alt="Место оператора и телефон на боковой панели" loading="lazy"></button>
-              <figcaption>Место оператора, номер на панели сиденья</figcaption>
-            </figure>
-            <figure class="shot">
-              <button type="button"><img src="assets/img/rear-crate.webp" width="1600" height="1199" alt="Серый погрузчик ADAL в транспортной раме" loading="lazy"></button>
-              <figcaption>Машина в транспортной раме</figcaption>
-            </figure>
-            <figure class="shot">
-              <button type="button"><img src="assets/img/warehouse-batch.webp" width="1600" height="1199" alt="Партия серых мини-погрузчиков ADAL 907 на складе" loading="lazy"></button>
-              <figcaption>Партия серых ADAL 907 на складе</figcaption>
-            </figure>
-            <figure class="shot">
-              <button type="button"><img src="assets/img/loaded-side.webp" width="1600" height="1199" alt="Погрузка машин на фуру, декаль ADAL на стрелах" loading="lazy"></button>
-              <figcaption>Погрузка на фуру, декаль на стрелах</figcaption>
-            </figure>
-            <figure class="shot">
-              <button type="button"><img src="assets/img/loaded-rears.webp" width="1600" height="1200" alt="Штабель погрузчиков кормой, надпись ADAL" loading="lazy"></button>
-              <figcaption>Штабель кормой, надпись ADAL</figcaption>
-            </figure>
-            <figure class="shot">
-              <button type="button"><img src="assets/img/loaded-truck.webp" width="1600" height="1200" alt="Фура с погруженными погрузчиками, ковши в торце" loading="lazy"></button>
-              <figcaption>Фура: ковши в торце кузова</figcaption>
-            </figure>
-            <figure class="shot">
-              <button type="button"><img src="assets/img/loaded-wide.webp" width="1600" height="1199" alt="Общий план фуры с серыми погрузчиками ADAL" loading="lazy"></button>
-              <figcaption>Общий план гружёной фуры</figcaption>
-            </figure>
-          </div>
-        </div>
-
-        <div class="gallery-block">
-          <p class="gallery-label">Узлы, заводской образец</p>
-          <div class="gallery">
-            <figure class="shot">
-              <button type="button"><img src="assets/img/bucket.webp" width="1200" height="1600" alt="Ковш заводского образца" loading="lazy"></button>
-              <figcaption>Ковш. Цвет кадра не серийный</figcaption>
-            </figure>
-            <figure class="shot">
-              <button type="button"><img src="assets/img/artic-joint.webp" width="1200" height="1600" alt="Шарнир ломающейся рамы" loading="lazy"></button>
-              <figcaption>Шарнир рамы и привод</figcaption>
-            </figure>
-            <figure class="shot">
-              <button type="button"><img src="assets/img/controls.webp" width="1200" height="1600" alt="Руль и педали" loading="lazy"></button>
-              <figcaption>Руль и педали</figcaption>
-            </figure>
-            <figure class="shot">
-              <button type="button"><img src="assets/img/levers.webp" width="1200" height="1600" alt="Рычаги гидравлики" loading="lazy"></button>
-              <figcaption>Рычаги гидравлики</figcaption>
-            </figure>
-            <figure class="shot">
-              <button type="button"><img src="assets/img/engine.webp" width="1200" height="1600" alt="Дизельный двигатель и аккумулятор" loading="lazy"></button>
-              <figcaption>Двигатель и аккумулятор</figcaption>
-            </figure>
-            <figure class="shot">
-              <button type="button"><img src="assets/img/three-quarter-orange.webp" width="1200" height="1600" alt="Стрела и поднятый ковш на заводском образце" loading="lazy"></button>
-              <figcaption>Стрела и ковш. На серии кузов графитовый</figcaption>
-            </figure>
-          </div>
+        <div class="gallery">
+          <figure class="shot">
+            <button type="button"><img src="assets/img/rear.webp" width="864" height="1152" alt="Серый мини-погрузчик ADAL MODEL 907, вид сзади"></button>
+          </figure>
+          <figure class="shot">
+            <button type="button"><img src="assets/img/boom-adal.webp" width="864" height="1152" alt="Стрела с надписью ADAL и плашкой MODEL 907"></button>
+          </figure>
+          <figure class="shot">
+            <button type="button"><img src="assets/img/cabin-phone.webp" width="864" height="1152" alt="Место оператора серого погрузчика ADAL" loading="lazy"></button>
+          </figure>
+          <figure class="shot">
+            <button type="button"><img src="assets/img/rear-crate.webp" width="1600" height="1199" alt="Серый погрузчик ADAL в транспортной раме" loading="lazy"></button>
+          </figure>
+          <figure class="shot">
+            <button type="button"><img src="assets/img/warehouse-batch.webp" width="1600" height="1199" alt="Партия серых мини-погрузчиков ADAL на складе" loading="lazy"></button>
+          </figure>
+          <figure class="shot">
+            <button type="button"><img src="assets/img/loaded-side.webp" width="1600" height="1199" alt="Серые погрузчики ADAL на фуре" loading="lazy"></button>
+          </figure>
+          <figure class="shot">
+            <button type="button"><img src="assets/img/loaded-rears.webp" width="1600" height="1200" alt="Серые погрузчики ADAL, вид с кормы на фуре" loading="lazy"></button>
+          </figure>
+          <figure class="shot">
+            <button type="button"><img src="assets/img/loaded-truck.webp" width="1600" height="1200" alt="Фура с погруженными серыми погрузчиками" loading="lazy"></button>
+          </figure>
+          <figure class="shot">
+            <button type="button"><img src="assets/img/loaded-wide.webp" width="1600" height="1199" alt="Общий план фуры с серыми погрузчиками" loading="lazy"></button>
+          </figure>
+          <figure class="shot">
+            <button type="button"><img src="assets/img/bucket.webp" width="1200" height="1600" alt="Ковш, заводской образец" loading="lazy"></button>
+          </figure>
+          <figure class="shot">
+            <button type="button"><img src="assets/img/artic-joint.webp" width="1200" height="1600" alt="Шарнир рамы, заводской образец" loading="lazy"></button>
+          </figure>
+          <figure class="shot">
+            <button type="button"><img src="assets/img/controls.webp" width="1200" height="1600" alt="Руль и педали, заводской образец" loading="lazy"></button>
+          </figure>
+          <figure class="shot">
+            <button type="button"><img src="assets/img/levers.webp" width="1200" height="1600" alt="Рычаги гидравлики, заводской образец" loading="lazy"></button>
+          </figure>
+          <figure class="shot">
+            <button type="button"><img src="assets/img/engine.webp" width="1200" height="1600" alt="Двигатель и аккумуляторы, заводской образец" loading="lazy"></button>
+          </figure>
+          <figure class="shot">
+            <button type="button"><img src="assets/img/three-quarter-orange.webp" width="1200" height="1600" alt="Стрела и ковш заводского образца, цвет не серийный" loading="lazy"></button>
+          </figure>
         </div>
 
         <div class="gallery-block" id="video">
@@ -345,12 +333,8 @@
     <button class="lb-btn lb-prev" type="button" aria-label="Предыдущее фото">‹</button>
     <img alt="">
     <button class="lb-btn lb-next" type="button" aria-label="Следующее фото">›</button>
-    <p></p>
   </div>
 
-  <noscript>
-    <p class="wrap">Для вращения 3D-модели нужен JavaScript. Позвонить: <a href="tel:+77003330999">8 700 333 0 999</a>.</p>
-  </noscript>
-  <script type="module" src="assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
