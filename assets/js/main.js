@@ -1,21 +1,13 @@
-import { initViewer } from './loader.js';
-
-const stage = document.getElementById('stage');
-initViewer(stage);
-
 const shots = Array.from(document.querySelectorAll('.shot'));
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = lightbox.querySelector('img');
-const lightboxCap = lightbox.querySelector('p');
 let shotIndex = 0;
 
 function openShot(index) {
   shotIndex = (index + shots.length) % shots.length;
   const img = shots[shotIndex].querySelector('img');
-  const cap = shots[shotIndex].querySelector('figcaption');
   lightboxImg.src = img.currentSrc || img.src;
   lightboxImg.alt = img.alt;
-  lightboxCap.textContent = cap ? cap.textContent : '';
   lightbox.hidden = false;
   document.body.style.overflow = 'hidden';
 }
