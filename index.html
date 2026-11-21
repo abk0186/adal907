@@ -183,55 +183,26 @@
         <h2 data-i18n="save.title">Сколько экономит погрузчик</h2>
         <div class="save-highlights">
           <article class="save-hl">
-            <strong>4</strong>
-            <p data-i18n="save.hl.people">Заменяет работу 4 дворников</p>
+            <strong>5</strong>
+            <p data-i18n="save.hl.people">Заменяет работу 5 дворников</p>
           </article>
           <article class="save-hl">
-            <strong>600&nbsp;000&nbsp;₸</strong>
-            <p data-i18n="save.hl.month">Экономия около 600&nbsp;000&nbsp;₸ в месяц</p>
+            <strong>700&nbsp;000&nbsp;₸</strong>
+            <p data-i18n="save.hl.month">Экономия около 700&nbsp;000&nbsp;₸ в месяц с учётом топлива</p>
           </article>
           <article class="save-hl">
-            <strong>3&nbsp;000&nbsp;000&nbsp;₸</strong>
-            <p data-i18n="save.hl.winter">около 3&nbsp;000&nbsp;000&nbsp;₸ за зиму</p>
+            <strong>3&nbsp;500&nbsp;000&nbsp;₸</strong>
+            <p data-i18n="save.hl.winter">около 3&nbsp;500&nbsp;000&nbsp;₸ за зиму</p>
           </article>
         </div>
-
-        <div class="save-visual">
-          <div class="save-crew">
-            <div class="save-crew-side">
-              <div class="save-people" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.1"/><path d="M6.2 19.5c.4-3.4 2.8-5.5 5.8-5.5s5.4 2.1 5.8 5.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.1"/><path d="M6.2 19.5c.4-3.4 2.8-5.5 5.8-5.5s5.4 2.1 5.8 5.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.1"/><path d="M6.2 19.5c.4-3.4 2.8-5.5 5.8-5.5s5.4 2.1 5.8 5.5"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.1"/><path d="M6.2 19.5c.4-3.4 2.8-5.5 5.8-5.5s5.4 2.1 5.8 5.5"/></svg>
-              </div>
-              <span data-i18n="save.visual.people">4 дворника</span>
-            </div>
-            <span class="save-vs" aria-hidden="true">→</span>
-            <div class="save-crew-side">
-              <div class="save-loader" aria-hidden="true">
-                <svg viewBox="0 0 48 28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 18h18l3-6h6l5 6h2"/><rect x="10" y="12" width="14" height="6" rx="1"/><circle cx="14" cy="22" r="3.2"/><circle cx="30" cy="22" r="3.2"/><path d="M32 12 V6 l8-2 3 8"/></svg>
-              </div>
-              <span data-i18n="save.visual.loader">1 погрузчик с оператором</span>
-            </div>
-          </div>
-          <ul class="bar-list save-cost-bars">
-            <li>
-              <span class="bar-label" data-i18n="save.bar.crew">Оплата 4 дворников в месяц</span>
-              <div class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:100%"></span></div>
-              <strong>1&nbsp;000&nbsp;000&nbsp;₸</strong>
-            </li>
-            <li>
-              <span class="bar-label" data-i18n="save.bar.operator">Оплата 1 оператора в месяц</span>
-              <div class="bar-track" aria-hidden="true"><span class="bar-fill bar-fill-money" style="width:40%"></span></div>
-              <strong>400&nbsp;000&nbsp;₸</strong>
-            </li>
-          </ul>
-        </div>
+        <p class="save-break" data-i18n="save.break">5 дворников — 1&nbsp;250&nbsp;000&nbsp;₸; погрузчик: оператор 400&nbsp;000&nbsp;₸ + топливо 154&nbsp;000&nbsp;₸</p>
 
         <details class="calc-details">
           <summary data-i18n="calc.toggle">Посчитать со своими цифрами</summary>
           <form class="calc" id="savings-calc" novalidate>
             <div class="calc-grid">
               <label><span data-i18n="calc.workers">Число рабочих</span>
-                <input name="workers" type="number" inputmode="numeric" min="1" max="30" step="1" value="4" required>
+                <input name="workers" type="number" inputmode="numeric" min="1" max="30" step="1" value="5" required>
               </label>
               <label><span data-i18n="calc.salary">Зарплата рабочего в месяц, ₸</span>
                 <input name="salary" type="number" inputmode="numeric" min="0" max="2000000" step="1000" value="250000" required>
@@ -239,22 +210,28 @@
               <label><span data-i18n="calc.months">Месяцев за зиму</span>
                 <input name="months" type="number" inputmode="numeric" min="1" max="12" step="1" value="5" required>
               </label>
+              <label><span data-i18n="calc.hours">Моточасов в месяц</span>
+                <input name="hours" type="number" inputmode="numeric" min="0" max="744" step="1" value="176" required>
+              </label>
+              <label><span data-i18n="calc.diesel">Цена дизеля, ₸/л</span>
+                <input name="diesel" type="number" inputmode="numeric" min="0" max="2000" step="1" value="350" required>
+              </label>
             </div>
             <div class="calc-result" aria-live="polite">
               <div>
                 <span data-i18n="calc.monthLabel">Экономия в месяц</span>
-                <strong id="calc-month">600&nbsp;000&nbsp;₸</strong>
+                <strong id="calc-month">696&nbsp;000&nbsp;₸</strong>
               </div>
               <div>
                 <span data-i18n="calc.yearLabel">Экономия за зиму</span>
-                <strong id="calc-year">3&nbsp;000&nbsp;000&nbsp;₸</strong>
+                <strong id="calc-year">3&nbsp;480&nbsp;000&nbsp;₸</strong>
               </div>
             </div>
             <p class="calc-note" id="calc-note" hidden></p>
           </form>
         </details>
 
-        <p class="save-foot" data-i18n="save.foot">Примерный расчёт на оплате труда: дворник 250&nbsp;000&nbsp;₸, оператор 400&nbsp;000&nbsp;₸, без учёта топлива и обслуживания.</p>
+        <p class="save-foot" data-i18n="save.foot">Примерный расчёт: дворник 250&nbsp;000&nbsp;₸, оператор 400&nbsp;000&nbsp;₸, дизель 2,5&nbsp;л/ч, 8&nbsp;ч в день × 22 рабочих дня в месяц, цена ДТ 350&nbsp;₸/л (Астана, ноябрь 2026, округлено), без учёта обслуживания.</p>
       </div>
     </section>
 

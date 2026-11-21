@@ -69,6 +69,7 @@ form.addEventListener('submit', (event) => {
 
 
 const OPERATOR_WAGE = 400000;
+const FUEL_RATE = 2.5;
 const calcForm = document.getElementById("savings-calc");
 const calcMonth = document.getElementById("calc-month");
 const calcYear = document.getElementById("calc-year");
@@ -84,13 +85,16 @@ function updateSavingsCalc() {
   const workers = Number(calcForm.workers.value);
   const salary = Number(calcForm.salary.value);
   const months = Number(calcForm.months.value);
+  const hours = Number(calcForm.hours.value);
+  const diesel = Number(calcForm.diesel.value);
   const tr = (key, fallback) => (window.adalT ? window.adalT(key) : fallback);
-  if (!Number.isFinite(workers) || !Number.isFinite(salary) || !Number.isFinite(months) || workers < 1 || months < 1 || salary < 0) {
+  if (!Number.isFinite(workers) || !Number.isFinite(salary) || !Number.isFinite(months) || !Number.isFinite(hours) || !Number.isFinite(diesel) || workers < 1 || months < 1 || salary < 0 || hours < 0 || diesel < 0) {
     calcMonth.textContent = "—";
     calcYear.textContent = "—";
     return;
   }
-  const monthly = Math.max(0, workers * salary - OPERATOR_WAGE);
+  const fuel = FUEL_RATE * hours * diesel;
+  const monthly = Math.max(0, workers * salary - OPERATOR_WAGE - fuel);
   calcMonth.textContent = formatTenge(monthly);
   calcYear.textContent = formatTenge(monthly * months);
   if (monthly > 0) {
@@ -98,7 +102,7 @@ function updateSavingsCalc() {
     calcNote.textContent = "";
   } else {
     calcNote.hidden = false;
-    calcNote.textContent = tr("calc.zero", "При этих значениях экономии на оплате труда нет: фонд рабочих не выше зарплаты оператора.");
+    calcNote.textContent = tr("calc.zero", "При этих значениях экономии нет: фонд рабочих не выше расходов на оператора и топливо.");
   }
 }
 

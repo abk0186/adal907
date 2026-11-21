@@ -767,6 +767,14 @@ h3 { font-size: 1.12rem; font-weight: 800; letter-spacing: -0.02em; }
   background: transparent;
 }
 
+.save-break {
+  margin: 4px 0 20px;
+  color: var(--graphite);
+  font-size: 16px;
+  line-height: 1.45;
+  max-width: 46rem;
+}
+
 .save-foot {
   margin: 0;
   color: var(--muted);
