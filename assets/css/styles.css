@@ -673,6 +673,31 @@ h3 { font-size: 1.12rem; font-weight: 800; letter-spacing: -0.02em; }
 .text-link:hover { color: var(--red-dark); }
 .jk-calc-link { margin: 22px 0 0; }
 
+
+.calc-steps {
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  counter-reset: none;
+}
+.calc-steps li {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 18px 14px;
+}
+.calc-steps h3 { margin: 0 0 8px; font-size: 1.05rem; }
+.calc-steps p { margin: 0; color: #3e464e; }
+.calc-figure {
+  margin-top: 10px !important;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
 .table-wrap {
   overflow-x: auto;
   margin: 0 0 28px;

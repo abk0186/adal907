@@ -68,7 +68,7 @@ form.addEventListener('submit', (event) => {
 });
 
 
-const OPERATOR_WAGE = 350000;
+const OPERATOR_WAGE = 400000;
 const calcForm = document.getElementById("savings-calc");
 const calcMonth = document.getElementById("calc-month");
 const calcYear = document.getElementById("calc-year");

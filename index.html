@@ -182,7 +182,40 @@
       <div class="wrap">
         <p class="kicker" data-i18n="save.badge">Примерный расчёт</p>
         <h2 data-i18n="save.title">Сколько экономит погрузчик</h2>
-        <p class="section-lead" data-i18n="save.lead">Ориентир для типичных работ: сколько ручных рабочих заменяет один мини-погрузчик и какую сумму можно сэкономить на оплате труда в месяц. Это валовая экономия на зарплате до расходов на топливо и обслуживание. Цена техники в расчёт не входит и остаётся по запросу.</p>
+        <p class="section-lead" data-i18n="save.lead">Только уборка снега. Считаем, сколько ручных рабочих заменяет один мини-погрузчик и какую сумму можно сэкономить на оплате труда. Это валовая экономия на зарплате до расходов на топливо и обслуживание. Цена техники в расчёт не входит и остаётся по запросу.</p>
+
+        <ol class="calc-steps">
+          <li>
+            <h3 data-i18n="save.step1.title">1. Объём лопаты</h3>
+            <p data-i18n="save.step1.body">Типичная снеговая лопата: ковш примерно 45&nbsp;×&nbsp;35&nbsp;см, средний слой снега в лопате 10&nbsp;см — без «горки», чтобы совок можно было устойчиво отбросить.</p>
+            <p class="calc-figure">0,45&nbsp;×&nbsp;0,35&nbsp;×&nbsp;0,10&nbsp;=&nbsp;0,016&nbsp;м³ <span data-i18n="save.step1.unit">за один совок</span></p>
+          </li>
+          <li>
+            <h3 data-i18n="save.step2.title">2. Темп в начале работы</h3>
+            <p data-i18n="save.step2.body">Один цикл — набрать снег, сделать 2–4 шага к отвалу, отбросить и вернуться — около 12&nbsp;секунд, то есть 5 совков в минуту.</p>
+            <p class="calc-figure">0,016&nbsp;×&nbsp;5&nbsp;×&nbsp;60&nbsp;=&nbsp;4,8&nbsp;м³/ч</p>
+          </li>
+          <li>
+            <h3 data-i18n="save.step3.title">3. Усталость и паузы за смену</h3>
+            <p data-i18n="save.step3.body">В зимнюю смену закладываем около 10&nbsp;минут отдыха и обогрева на каждый час: чистой работы остаётся 50&nbsp;минут. За смену темп падает; в среднем оставляем 75&nbsp;% от начального.</p>
+            <p class="calc-figure">4,8&nbsp;×&nbsp;(50/60)&nbsp;×&nbsp;0,75&nbsp;≈&nbsp;3,0&nbsp;м³/ч <span data-i18n="save.step3.unit">на одного рабочего</span></p>
+          </li>
+          <li>
+            <h3 data-i18n="save.step4.title">4. Выработка погрузчика</h3>
+            <p data-i18n="save.step4.body">В расчёте принимаем ковш 0,3&nbsp;м³ — так указано на рекламном баннере; в черновике руководства импортёра эта цифра помечена «уточнить у завода» и не является подтверждённой заводской характеристикой. Коэффициент наполнения 0,80 (не с горкой, часть снега теряется): 0,24&nbsp;м³ за цикл. Время цикла на коротком плече двора — набор, короткая перевозка к отвалу, разгрузка, возврат — 55&nbsp;с. Использование времени смены 0,70: объезд машин, переход между участками, короткие остановки.</p>
+            <p class="calc-figure">3600&nbsp;×&nbsp;0,30&nbsp;×&nbsp;0,80&nbsp;×&nbsp;0,70&nbsp;/&nbsp;55&nbsp;≈&nbsp;11&nbsp;м³/ч</p>
+          </li>
+          <li>
+            <h3 data-i18n="save.step5.title">5. Сколько людей заменяет</h3>
+            <p data-i18n="save.step5.body">Делим выработку погрузчика на сменную выработку одного рабочего. Получается 3,7. В таблице и калькуляторе принимаем 4 рабочих — обычное округление до целого, без запаса вверх.</p>
+            <p class="calc-figure">11&nbsp;/&nbsp;3,0&nbsp;≈&nbsp;3,7&nbsp;→&nbsp;4</p>
+          </li>
+          <li>
+            <h3 data-i18n="save.step6.title">6. Экономия на оплате труда</h3>
+            <p data-i18n="save.step6.body">Зарплата рабочего по умолчанию — 250&nbsp;000&nbsp;₸ в месяц с учётом налогов и начислений. Зарплата оператора — 400&nbsp;000&nbsp;₸ в месяц, в калькуляторе это значение не меняется. Экономия = зарплаты заменённых рабочих минус зарплата одного оператора. Расход топлива и цена техники не используются.</p>
+            <p class="calc-figure">4&nbsp;×&nbsp;250&nbsp;000&nbsp;−&nbsp;400&nbsp;000&nbsp;=&nbsp;600&nbsp;000&nbsp;₸ <span data-i18n="save.step6.unit">в месяц</span></p>
+          </li>
+        </ol>
 
         <div class="table-wrap">
           <table class="data-table">
@@ -191,28 +224,15 @@
                 <th data-i18n="save.col.job">Вид работ</th>
                 <th data-i18n="save.col.workers">Рабочих заменяет</th>
                 <th data-i18n="save.col.month">Экономия в месяц, ₸</th>
+                <th data-i18n="save.col.season">Экономия за сезон, ₸</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td data-i18n="save.job.snow">Уборка снега</td>
                 <td>4</td>
-                <td>450&nbsp;000</td>
-              </tr>
-              <tr>
-                <td data-i18n="save.job.bulk">Сыпучие материалы (песок, щебень, корма)</td>
-                <td>3</td>
-                <td>250&nbsp;000</td>
-              </tr>
-              <tr>
-                <td data-i18n="save.job.debris">Строительный мусор</td>
-                <td>4</td>
-                <td>450&nbsp;000</td>
-              </tr>
-              <tr>
-                <td data-i18n="save.job.manure">Навоз</td>
-                <td>4</td>
-                <td>450&nbsp;000</td>
+                <td>600&nbsp;000</td>
+                <td>3&nbsp;000&nbsp;000</td>
               </tr>
             </tbody>
           </table>
@@ -227,45 +247,20 @@
                 <div class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:100%"></span></div>
                 <strong>4</strong>
               </li>
-              <li>
-                <span class="bar-label" data-i18n="save.job.bulk">Сыпучие материалы (песок, щебень, корма)</span>
-                <div class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:75%"></span></div>
-                <strong>3</strong>
-              </li>
-              <li>
-                <span class="bar-label" data-i18n="save.job.debris">Строительный мусор</span>
-                <div class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:100%"></span></div>
-                <strong>4</strong>
-              </li>
-              <li>
-                <span class="bar-label" data-i18n="save.job.manure">Навоз</span>
-                <div class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:100%"></span></div>
-                <strong>4</strong>
-              </li>
             </ul>
           </figure>
           <figure class="chart-card">
-            <figcaption data-i18n="save.chart.money">Экономия на оплате труда в месяц</figcaption>
+            <figcaption data-i18n="save.chart.money">Экономия на оплате труда</figcaption>
             <ul class="bar-list">
               <li>
-                <span class="bar-label" data-i18n="save.job.snow">Уборка снега</span>
-                <div class="bar-track" aria-hidden="true"><span class="bar-fill bar-fill-money" style="width:100%"></span></div>
-                <strong>450&nbsp;000&nbsp;₸</strong>
+                <span class="bar-label" data-i18n="save.chart.month">В месяц</span>
+                <div class="bar-track" aria-hidden="true"><span class="bar-fill bar-fill-money" style="width:20%"></span></div>
+                <strong>600&nbsp;000&nbsp;₸</strong>
               </li>
               <li>
-                <span class="bar-label" data-i18n="save.job.bulk">Сыпучие материалы (песок, щебень, корма)</span>
-                <div class="bar-track" aria-hidden="true"><span class="bar-fill bar-fill-money" style="width:55.6%"></span></div>
-                <strong>250&nbsp;000&nbsp;₸</strong>
-              </li>
-              <li>
-                <span class="bar-label" data-i18n="save.job.debris">Строительный мусор</span>
+                <span class="bar-label" data-i18n="save.chart.season">За сезон (5&nbsp;мес.)</span>
                 <div class="bar-track" aria-hidden="true"><span class="bar-fill bar-fill-money" style="width:100%"></span></div>
-                <strong>450&nbsp;000&nbsp;₸</strong>
-              </li>
-              <li>
-                <span class="bar-label" data-i18n="save.job.manure">Навоз</span>
-                <div class="bar-track" aria-hidden="true"><span class="bar-fill bar-fill-money" style="width:100%"></span></div>
-                <strong>450&nbsp;000&nbsp;₸</strong>
+                <strong>3&nbsp;000&nbsp;000&nbsp;₸</strong>
               </li>
             </ul>
           </figure>
@@ -273,27 +268,27 @@
 
         <form class="calc" id="savings-calc" novalidate>
           <h3 data-i18n="calc.title">Калькулятор экономии</h3>
-          <p class="calc-lead" data-i18n="calc.lead">Подставьте свои цифры. По умолчанию — четыре рабочих (как при уборке снега), зарплата рабочего 200&nbsp;000&nbsp;₸ и шесть месяцев работы в году.</p>
+          <p class="calc-lead" data-i18n="calc.lead">Подставьте свои цифры. По умолчанию — четыре рабочих, зарплата рабочего 250&nbsp;000&nbsp;₸ и пять месяцев снежного сезона в Астане.</p>
           <div class="calc-grid">
             <label><span data-i18n="calc.workers">Число заменяемых рабочих</span>
               <input name="workers" type="number" inputmode="numeric" min="1" max="30" step="1" value="4" required>
             </label>
             <label><span data-i18n="calc.salary">Месячная зарплата рабочего, включая налоги и начисления, ₸</span>
-              <input name="salary" type="number" inputmode="numeric" min="0" max="2000000" step="1000" value="200000" required>
+              <input name="salary" type="number" inputmode="numeric" min="0" max="2000000" step="1000" value="250000" required>
             </label>
             <label><span data-i18n="calc.months">Месяцев работы в году</span>
-              <input name="months" type="number" inputmode="numeric" min="1" max="12" step="1" value="6" required>
+              <input name="months" type="number" inputmode="numeric" min="1" max="12" step="1" value="5" required>
             </label>
           </div>
-          <p class="calc-operator" data-i18n="calc.operator">Из фонда оплаты труда вычитается зарплата одного оператора: 350&nbsp;000&nbsp;₸ в месяц (ориентир по вакансиям в Астане). Это значение в калькуляторе не меняется.</p>
+          <p class="calc-operator" data-i18n="calc.operator">Из фонда оплаты труда вычитается зарплата одного оператора: 400&nbsp;000&nbsp;₸ в месяц. Это значение в калькуляторе не меняется.</p>
           <div class="calc-result" aria-live="polite">
             <div>
               <span data-i18n="calc.monthLabel">Экономия в месяц</span>
-              <strong id="calc-month">450&nbsp;000&nbsp;₸</strong>
+              <strong id="calc-month">600&nbsp;000&nbsp;₸</strong>
             </div>
             <div>
-              <span data-i18n="calc.yearLabel">Экономия в год</span>
-              <strong id="calc-year">2&nbsp;700&nbsp;000&nbsp;₸</strong>
+              <span data-i18n="calc.yearLabel">Экономия за сезон</span>
+              <strong id="calc-year">3&nbsp;000&nbsp;000&nbsp;₸</strong>
             </div>
           </div>
           <p class="calc-note" id="calc-note" data-i18n="calc.note">Валовая экономия на оплате труда до расходов на топливо и обслуживание.</p>
@@ -302,22 +297,14 @@
         <div class="calc-assumptions">
           <h3 data-i18n="save.assump.title">Допущения расчёта</h3>
           <ul>
-            <li data-i18n="save.assump.manual">Ручная выработка одного рабочего: снег — 2,5&nbsp;м³/ч (перекидывание снега и скола, 23,9&nbsp;мин/м³); сыпучие — 2,0&nbsp;м³/ч (погрузка лопатой песка, щебня и гравия, около 2,08&nbsp;м³/ч по ЕНиР); строительный мусор — 1,2&nbsp;м³/ч (чуть ниже нормы погрузки мусора 46,8&nbsp;мин/м³ ≈ 1,28&nbsp;м³/ч); навоз — 1,2&nbsp;м³/ч (осторожнее типовой нормы около 1,4&nbsp;м³/ч при буртовании за 7-часовую смену).</li>
-            <li data-i18n="save.assump.loader">Для расчёта принят ковш 0,25&nbsp;м³ — нижняя граница диапазона 0,25–0,3&nbsp;м³. В характеристиках модели указана грузоподъёмность 500&nbsp;кг; объём ковша как паспортная величина не приводится. Время цикла 50–70&nbsp;с на коротком плече (осторожнее каталожных 20–30&nbsp;с у более крупных машин), коэффициент наполнения 0,55–0,85 в зависимости от материала, использование времени смены 0,65. Эксплуатационная выработка, округлённая вниз: снег 10&nbsp;м³/ч, сыпучие 6,5&nbsp;м³/ч, мусор и навоз по 5&nbsp;м³/ч. Число рабочих — отношение выработок, округлённое вниз до целого.</li>
-            <li data-i18n="save.assump.wages">Зарплата рабочего по умолчанию — 200&nbsp;000&nbsp;₸ в месяц с учётом налогов и начислений: осторожный ориентир по вакансиям дворника и разнорабочего в Астане в 2025–2026 годах (часто 180–250&nbsp;тыс.&nbsp;₸). Зарплата оператора — 350&nbsp;000&nbsp;₸: нижняя часть диапазона вакансий оператора мини-погрузчика в Астане. Экономия = зарплаты заменённых рабочих минус зарплата одного оператора. Расход топлива и цена техники не используются.</li>
+            <li data-i18n="save.assump.human">Ручная выработка выведена из объёма совка, темпа и усталости, а не из зарубежных норм. Размер лопаты и 12&nbsp;секунд на цикл — типичные оценки для работы во дворе с короткой отноской к отвалу. Паузы 10&nbsp;минут в час и снижение темпа до 75&nbsp;% — расчётный запас на обогрев и утомление за смену.</li>
+            <li data-i18n="save.assump.loader">Объём ковша 0,3&nbsp;м³ взят с рекламного баннера и в заводских документах (контракт, проформа) не подтверждён; в характеристиках на сайте эта цифра не публикуется как паспортная. Наполнение 0,80, цикл 55&nbsp;с и использование времени 0,70 приняты осторожно, чтобы не завысить выработку техники.</li>
+            <li data-i18n="save.assump.season">Пять месяцев сезона — рабочий ориентир для Астаны. Средняя продолжительность устойчивого снежного покрова в городе — 143 дня (около 4,8 месяца), продолжительность зимы — 5,0–5,5 месяца. В сезоне 2023–2024 на станции Астана зафиксировано 129 дней со снежным покровом. В калькуляторе число месяцев можно изменить.</li>
           </ul>
           <p class="sources-label" data-i18n="save.sources">Источники:</p>
           <ul class="source-links">
-            <li><a href="https://sudact.ru/law/normy-obsluzhivaniia-dlia-rabochikh-zaniatykh-na-rabotakh/normy/3/3.1/3.1.9/" target="_blank" rel="noopener">Минтруд РФ, 24.06.1996 №&nbsp;38, п.&nbsp;3.1.9 — перекидывание снега, 23,9&nbsp;мин/м³</a></li>
-            <li><a href="https://sudact.ru/law/normy-obsluzhivaniia-dlia-rabochikh-zaniatykh-na-rabotakh/normy/3/3.1/3.1.18/" target="_blank" rel="noopener">Минтруд РФ, 24.06.1996 №&nbsp;38, п.&nbsp;3.1.18 — погрузка мусора лопатой, 46,8&nbsp;мин/м³</a></li>
-            <li><a href="https://studfile.net/preview/6350818/page:12/" target="_blank" rel="noopener">ЕНиР, сборник Е1 — песок, щебень и гравий лопатами на ленту, 48&nbsp;чел.-ч на 100&nbsp;м³</a></li>
-            <li><a href="https://ikc-rk.ru/wp-content/uploads/2024/09/tipovye_normy_vyrabotki_i_normativy_vremeni_na_ruchnye_selskohozyajstvennye.pdf" target="_blank" rel="noopener">Типовые нормы Минсельхоза РФ — буртование навоза, 10&nbsp;м³ за 7-часовую смену</a></li>
-            <li><a href="https://logists.by/gruzoperevozki/perevozki-po-gorodam/proizvoditelnost-pogruzchika-proizvoditelnost-pogruzchika-d-380-do-75-g-v-chas-v-nastoyaschee-vremya-promyshlennostyu-osvaivaetsya-bolee-sovershennaya-model-universalnogo-odnokovshovogo-pogruzchika-na" target="_blank" rel="noopener">Формула производительности ковшового погрузчика (цикл, наполнение, использование времени)</a></li>
-            <li><a href="https://www.olx.kz/rabota/astana/q-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D0%B4%D0%B2%D0%BE%D1%80%D0%BD%D0%B8%D0%BA/" target="_blank" rel="noopener">OLX.kz — вакансии дворника в Астане, 2026</a></li>
-            <li><a href="https://astana.hh.kz/vacancy/136106454" target="_blank" rel="noopener">hh.kz — дворник в Астане, 250–300&nbsp;тыс.&nbsp;₸, август 2026</a></li>
-            <li><a href="https://www.enbek.kz/ru/%D0%B2%D0%B0%D0%BA%D0%B0%D0%BD%D1%81%D0%B8%D1%8F/4565406/pdf-new" target="_blank" rel="noopener">enbek.kz — дворник в Астане, 150–170&nbsp;тыс.&nbsp;₸, январь 2025</a></li>
-            <li><a href="https://www.olx.kz/obyavlenie/rabota/trebuetsya-opytnyy-voditel-operator-na-mini-pogruzchik-IDpa3ns.html" target="_blank" rel="noopener">OLX.kz — оператор мини-погрузчика в Астане, 350–400&nbsp;тыс.&nbsp;₸, март 2026</a></li>
-            <li><a href="https://astana.hh.kz/vacancies/voditel_pogruzchika" target="_blank" rel="noopener">hh.kz — водитель мини-погрузчика (МКСМ/Bobcat) в Астане, 450–550&nbsp;тыс.&nbsp;₸</a></li>
+            <li><a href="https://journal.kazhydromet.kz/kazgidro/article/download/1105/1118/6676" target="_blank" rel="noopener">Е.Н.&nbsp;Вилесов, «Характеристики климата города Астана…», журнал Казгидромета, 2017: 143 дня устойчивого снежного покрова, зима 5,0–5,5 месяца</a></li>
+            <li><a href="https://kazhydromet.kz/uploads/files/2047/file/693bd2e2eee001-ezhegodnyy-byulleten-po-snezhnomu-pokrovu-2024.pdf" target="_blank" rel="noopener">Казгидромет, бюллетень мониторинга снежного покрова за 2023–2024&nbsp;гг.: станция Астана — 129 дней со снежным покровом</a></li>
           </ul>
         </div>
       </div>
