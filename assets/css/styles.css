@@ -86,7 +86,10 @@
 *::before,
 *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header) + env(safe-area-inset-top, 0px));
+}
 html[data-lang="kk"]:not(.i18n-ready) body { visibility: hidden; }
 
 body {
