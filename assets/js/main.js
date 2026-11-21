@@ -66,3 +66,42 @@ form.addEventListener('submit', (event) => {
     window.open(url, '_blank', 'noopener');
   }
 });
+
+
+const OPERATOR_WAGE = 350000;
+const calcForm = document.getElementById("savings-calc");
+const calcMonth = document.getElementById("calc-month");
+const calcYear = document.getElementById("calc-year");
+const calcNote = document.getElementById("calc-note");
+
+function formatTenge(value) {
+  const n = Math.max(0, Math.round(Number(value) || 0));
+  return `${n.toLocaleString("ru-RU").replace(/\s/g, "\u00a0")}\u00a0₸`;
+}
+
+function updateSavingsCalc() {
+  if (!calcForm || !calcMonth || !calcYear || !calcNote) return;
+  const workers = Number(calcForm.workers.value);
+  const salary = Number(calcForm.salary.value);
+  const months = Number(calcForm.months.value);
+  const tr = (key, fallback) => (window.adalT ? window.adalT(key) : fallback);
+  if (!Number.isFinite(workers) || !Number.isFinite(salary) || !Number.isFinite(months) || workers < 1 || months < 1 || salary < 0) {
+    calcMonth.textContent = "—";
+    calcYear.textContent = "—";
+    return;
+  }
+  const monthly = Math.max(0, workers * salary - OPERATOR_WAGE);
+  calcMonth.textContent = formatTenge(monthly);
+  calcYear.textContent = formatTenge(monthly * months);
+  calcNote.textContent = monthly > 0
+    ? tr("calc.note", "Валовая экономия на оплате труда до расходов на топливо и обслуживание.")
+    : tr("calc.zero", "При этих значениях экономии на оплате труда нет: фонд заменённых рабочих не выше зарплаты оператора.");
+}
+
+if (calcForm) {
+  calcForm.addEventListener("input", updateSavingsCalc);
+  calcForm.addEventListener("change", updateSavingsCalc);
+  calcForm.addEventListener("submit", (event) => event.preventDefault());
+  document.addEventListener("adal-lang-change", updateSavingsCalc);
+  updateSavingsCalc();
+}

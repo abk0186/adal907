@@ -663,6 +663,215 @@ h3 { font-size: 1.12rem; font-weight: 800; letter-spacing: -0.02em; }
   .section { padding: 72px 0; }
 }
 
+
+.text-link {
+  color: var(--red);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.text-link:hover { color: var(--red-dark); }
+.jk-calc-link { margin: 22px 0 0; }
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 0 0 28px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 420px;
+  font-variant-numeric: tabular-nums;
+}
+.data-table th,
+.data-table td {
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.data-table th {
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  font-weight: 700;
+  background: #fafbfc;
+}
+.data-table tr:last-child td { border-bottom: 0; }
+.data-table td:nth-child(2),
+.data-table td:nth-child(3),
+.data-table th:nth-child(2),
+.data-table th:nth-child(3) { text-align: right; white-space: nowrap; }
+
+.charts {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+.chart-card {
+  margin: 0;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 16px 14px;
+}
+.chart-card figcaption {
+  font-weight: 800;
+  margin: 0 0 14px;
+}
+.bar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.bar-list li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 4px 10px;
+}
+.bar-label {
+  font-size: 13.5px;
+  color: var(--graphite);
+}
+.bar-track {
+  height: 10px;
+  background: #eceff2;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--graphite);
+  border-radius: 999px;
+}
+.bar-fill-money { background: var(--red); }
+.bar-list strong {
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+  justify-self: end;
+}
+
+.calc {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 18px 18px;
+  margin-bottom: 28px;
+}
+.calc h3 { margin: 0 0 8px; }
+.calc-lead {
+  margin: 0 0 18px;
+  color: var(--muted);
+}
+.calc-grid {
+  display: grid;
+  gap: 14px;
+}
+.calc label {
+  display: grid;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 14px;
+}
+.calc input {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  background: #fafbfc;
+  min-height: 48px;
+  font-variant-numeric: tabular-nums;
+}
+.calc input:focus {
+  outline: 2px solid var(--red);
+  border-color: transparent;
+  background: white;
+}
+.calc-operator {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+.calc-result {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 16px;
+  background: var(--graphite);
+  color: white;
+  border-radius: 16px;
+}
+.calc-result span {
+  display: block;
+  color: #d5d8dc;
+  font-size: 13.5px;
+}
+.calc-result strong {
+  display: block;
+  font-size: clamp(1.35rem, 4vw, 1.85rem);
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.calc-note {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+
+.calc-assumptions {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.calc-assumptions h3 {
+  margin: 0 0 10px;
+  color: var(--graphite);
+  font-size: 15px;
+}
+.calc-assumptions ul { margin: 0 0 12px; padding-left: 1.15em; }
+.calc-assumptions li { margin: 0 0 8px; }
+.sources-label { margin: 0 0 6px; font-weight: 700; color: var(--graphite); }
+.source-links { margin: 0; padding-left: 1.15em; }
+.source-links a {
+  color: var(--graphite);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.source-links a:hover { color: var(--red); }
+
+.service-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+@media (min-width: 720px) {
+  .charts { grid-template-columns: 1fr 1fr; }
+  .calc-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .calc-result { grid-template-columns: 1fr 1fr; }
+  .bar-list li {
+    grid-template-columns: minmax(7.5rem, 0.9fr) minmax(0, 1.4fr) auto;
+    align-items: center;
+  }
+  .bar-list strong { justify-self: end; }
+}
+
+@media (min-width: 720px) and (max-width: 1199px) {
+  .nav .nav-optional { display: none; }
+}
+
+@media (min-width: 980px) and (max-width: 1199px) {
+  .header-inner { gap: 10px; }
+  .nav { gap: 10px; }
+  .nav a { font-size: 13.5px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
