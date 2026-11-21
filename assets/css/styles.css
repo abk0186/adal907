@@ -323,6 +323,7 @@ h3 { font-size: 1.12rem; font-weight: 800; letter-spacing: -0.02em; }
   border-color: var(--graphite);
   color: white;
 }
+.btn-block { width: 100%; }
 
 .hero-photo {
   margin: 0;
@@ -513,6 +514,55 @@ h3 { font-size: 1.12rem; font-weight: 800; letter-spacing: -0.02em; }
 .use h3 { margin-top: 8px; }
 .use p { margin: 6px 0 0; color: #3e464e; font-size: 14.5px; }
 
+.order {
+  background: var(--graphite);
+  color: white;
+  border-radius: 24px;
+  padding: 22px 18px 18px;
+}
+.order .section-lead { color: #c9cdd1; }
+.order-grid { display: grid; gap: 18px; }
+.order .btn-ghost {
+  background: transparent;
+  color: white;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.order-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.phone-big {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.form {
+  background: white;
+  color: var(--ink);
+  border-radius: 18px;
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+}
+.form label { display: grid; gap: 6px; font-weight: 700; font-size: 14px; }
+.form input,
+.form textarea {
+  width: 100%;
+  border: 1px solid #d5d8dc;
+  border-radius: 12px;
+  padding: 12px 12px;
+  background: #fafbfc;
+  min-height: 48px;
+}
+.form textarea { min-height: 96px; resize: vertical; }
+.form input:focus,
+.form textarea:focus {
+  outline: 2px solid var(--red);
+  border-color: transparent;
+  background: white;
+}
+
 .site-footer {
   padding: 28px 0 calc(28px + env(safe-area-inset-bottom));
   color: var(--muted);
@@ -589,6 +639,7 @@ h3 { font-size: 1.12rem; font-weight: 800; letter-spacing: -0.02em; }
   .gallery { grid-template-columns: 1fr 1fr; }
   .videos { grid-template-columns: 1fr 1fr; }
   .uses { grid-template-columns: repeat(3, 1fr); }
+  .order { padding: 36px; }
   .hero-photo { height: min(62vw, 560px); min-height: 420px; }
   .spec-groups { grid-template-columns: 1fr 1fr; }
   .spec-group:last-child { grid-column: 1 / -1; }
@@ -611,6 +662,7 @@ h3 { font-size: 1.12rem; font-weight: 800; letter-spacing: -0.02em; }
     min-height: 520px;
   }
   .gallery { grid-template-columns: 1fr 1fr 1fr; }
+  .order-grid { grid-template-columns: 1fr 1fr; align-items: start; gap: 28px; }
   .section { padding: 72px 0; }
 }
 
@@ -968,6 +1020,14 @@ h3 { font-size: 1.12rem; font-weight: 800; letter-spacing: -0.02em; }
 }
 
 .use-wide { grid-column: span 2; }
+
+.form-hint {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 13.5px;
+  font-weight: 400;
+  line-height: 1.45;
+}
 
 .float-cta { display: none; }
 

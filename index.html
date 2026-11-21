@@ -97,6 +97,7 @@
         <a href="#gallery" data-i18n="nav.gallery">Фото</a>
         <a class="nav-optional" href="#use" data-i18n="nav.use">Задачи</a>
         <a href="#service" data-i18n="nav.service">Сервис</a>
+        <a href="#order" data-i18n="nav.order">Заявка</a>
       </nav>
       <div class="lang-switch" role="group" aria-label="Язык сайта" data-i18n="lang.aria" data-i18n-attr="aria-label">
         <button type="button" data-set-lang="ru" aria-pressed="true">РУС</button>
@@ -436,6 +437,39 @@
       </div>
     </section>
 
+    <section class="section" id="order">
+      <div class="wrap">
+        <div class="order">
+          <div class="order-grid">
+            <div>
+              <h2 data-i18n="order.title">Забронировать погрузчик</h2>
+              <p class="section-lead" data-i18n="order.lead">Партия прибывает в Астану в начале декабря. Позвоните или напишите в WhatsApp — назовём цену, условия рассрочки и стоимость доставки в ваш регион.</p>
+              <a class="phone-big" href="tel:+77003330999">8 700 333 0 999</a>
+              <div class="order-actions">
+                <a class="btn btn-red" href="tel:+77003330999" data-i18n="btn.call">Позвонить</a>
+                <a class="btn btn-wa" href="https://wa.me/77003330999" target="_blank" rel="noopener" data-i18n="btn.wa">WhatsApp</a>
+              </div>
+            </div>
+            <form class="form" id="lead-form">
+              <label><span data-i18n="form.name">Имя</span>
+                <input name="name" autocomplete="name" maxlength="80">
+              </label>
+              <label><span data-i18n="form.phone">Телефон</span>
+                <input name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="+7">
+              </label>
+              <label><span data-i18n="form.region">Регион / город</span>
+                <input name="region" autocomplete="address-level2" maxlength="80">
+              </label>
+              <label><span data-i18n="form.task">Задача</span>
+                <textarea name="task" maxlength="400" placeholder="Ферма, корма, стройка, снег — что будете грузить" data-i18n="form.taskPh" data-i18n-attr="placeholder"></textarea>
+              </label>
+              <button class="btn btn-wa btn-block" type="submit" data-i18n="form.submit">Написать в WhatsApp</button>
+              <p class="form-hint" data-i18n="form.hint">Заявка откроется в WhatsApp — отправьте её, и мы свяжемся с вами</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="section" id="contacts">
       <div class="wrap">
