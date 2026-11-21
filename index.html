@@ -4,6 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light">
+  <script>
+    (function () {
+      var k = "adal907-lang", lang = "ru";
+      try {
+        var s = localStorage.getItem(k);
+        if (s === "kk" || s === "ru") lang = s;
+        else {
+          var list = [].concat(navigator.languages || [], [navigator.language, navigator.userLanguage]);
+          for (var i = 0; i < list.length; i++) {
+            var l = String(list[i] || "").toLowerCase();
+            if (l === "kk" || l.indexOf("kk-") === 0) { lang = "kk"; break; }
+          }
+        }
+      } catch (e) {}
+      document.documentElement.lang = lang;
+      document.documentElement.setAttribute("data-lang", lang);
+    })();
+  </script>
   <title>ADAL MODEL 907 — мини-погрузчик 500 кг в Астане</title>
   <meta name="description" content="Мини-погрузчик ADAL MODEL 907: грузоподъёмность 500 кг, дизель Changjia CJ32M 25 л.с., полный привод 4×4, шарнирно-сочленённая рама. Поступление в Астану в начале декабря, доставка в регионы, рассрочка. Цена по запросу.">
   <link rel="canonical" href="https://abk0186.github.io/adal907/">
@@ -25,6 +43,7 @@
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <noscript><style>html[data-lang="kk"] body { visibility: visible; }</style></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -41,19 +60,23 @@
   </script>
 </head>
 <body id="top">
-  <a class="skip" href="#photo">К фото</a>
+  <a class="skip" href="#photo" data-i18n="skip">К фото</a>
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="logo" href="#top" aria-label="ADAL MODEL 907">
         <span class="logo-mark">ADAL</span><span class="logo-model">MODEL 907</span>
       </a>
-      <nav class="nav" aria-label="Разделы">
-        <a href="#plus">Плюсы</a>
-        <a href="#specs">Характеристики</a>
-        <a href="#gallery">Фото</a>
-        <a href="#use">Задачи</a>
-        <a href="#order">Заявка</a>
+      <nav class="nav" aria-label="Разделы" data-i18n="nav.aria" data-i18n-attr="aria-label">
+        <a href="#plus" data-i18n="nav.plus">Плюсы</a>
+        <a href="#specs" data-i18n="nav.specs">Характеристики</a>
+        <a href="#gallery" data-i18n="nav.gallery">Фото</a>
+        <a href="#use" data-i18n="nav.use">Задачи</a>
+        <a href="#order" data-i18n="nav.order">Заявка</a>
       </nav>
+      <div class="lang-switch" role="group" aria-label="Язык сайта" data-i18n="lang.aria" data-i18n-attr="aria-label">
+        <button type="button" data-set-lang="ru" aria-pressed="true">РУС</button>
+        <button type="button" data-set-lang="kk" aria-pressed="false">ҚАЗ</button>
+      </div>
       <a class="header-phone" href="tel:+77003330999">
         <span class="header-phone-text">8 700 333 0 999</span>
         <span class="icon-btn" aria-hidden="true">
@@ -67,67 +90,85 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="kicker">Поступление в Астану — начало декабря · Доставка в регионы · Рассрочка</p>
-          <h1>Мини-погрузчик ADAL MODEL 907</h1>
-          <p class="lead">Шарнирно-сочленённая рама, ковш на 500&nbsp;кг, полный привод 4×4. Дизель 25&nbsp;л.с. — для хозяйства, стройки и частного двора.</p>
+          <p class="kicker" data-i18n="hero.kicker">Поступление в Астану — начало декабря · Доставка в регионы · Рассрочка</p>
+          <h1 data-i18n="hero.title">Мини-погрузчик ADAL MODEL 907</h1>
+          <p class="lead" data-i18n="hero.lead">Шарнирно-сочленённая рама, ковш на 500&nbsp;кг, полный привод 4×4. Дизель 25&nbsp;л.с. — для хозяйства, стройки и частного двора.</p>
           <div class="price-row">
             <div class="price">
-              <span class="price-label">Цена</span>
-              <strong>по запросу</strong>
+              <span class="price-label" data-i18n="price.label">Цена</span>
+              <strong data-i18n="price.value">по запросу</strong>
             </div>
             <div class="actions">
               <a class="btn btn-red" href="tel:+77003330999">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h3l2 5-2 1a12 12 0 0 0 5 5l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 6a2 2 0 0 1 2-2z"/></svg>
-                Позвонить
+                <span data-i18n="btn.call">Позвонить</span>
               </a>
               <a class="btn btn-wa" href="https://wa.me/77003330999" target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.15 6.4 2.15 11.83c0 1.74.46 3.44 1.34 4.94L2 22l5.39-1.4a10 10 0 0 0 4.65 1.18h.01c5.46 0 9.89-4.4 9.89-9.83C21.94 6.4 17.5 2 12.04 2zm5.76 14.15c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.12.07-1.81-.11-.42-.11-.95-.3-1.64-.59-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.16-1.54-1.16-2.94s.73-2.08 1-2.37c.24-.27.64-.39 1.02-.39.12 0 .23 0 .33.01.3.01.45.03.65.5.24.58.83 2 .9 2.15.07.14.12.32.02.51-.09.19-.14.31-.28.48-.14.17-.29.37-.42.5-.14.14-.28.29-.12.56.16.27.7 1.15 1.5 1.86 1.03.92 1.9 1.2 2.17 1.34.27.13.43.11.59-.07.16-.17.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.54.73 1.8.86.27.13.44.2.5.31.07.11.07.64-.17 1.32z"/></svg>
-                WhatsApp
+                <span data-i18n="btn.wa">WhatsApp</span>
               </a>
             </div>
           </div>
         </div>
 
         <figure class="hero-photo" id="photo">
-          <img src="assets/img/front-3q.jpg" width="1200" height="1600" alt="Серый мини-погрузчик ADAL MODEL 907, вид спереди сбоку, ковш поднят">
+          <img src="assets/img/front-3q.jpg" width="1200" height="1600" alt="Серый мини-погрузчик ADAL MODEL 907, вид спереди сбоку, ковш поднят" data-i18n="hero.alt" data-i18n-attr="alt">
         </figure>
       </div>
     </section>
 
     <section class="section" id="plus">
       <div class="wrap">
-        <h2>Назначение техники</h2>
-        <p class="section-lead">Компактный фронтальный мини-погрузчик для погрузочно-разгрузочных работ, перемещения сыпучих материалов и уборки территории в стеснённых условиях: на фермах, складах, строительных площадках и в частных дворах.</p>
+        <h2 data-i18n="purpose.title">Назначение техники</h2>
+        <p class="section-lead" data-i18n="purpose.lead">Компактный фронтальный мини-погрузчик для погрузочно-разгрузочных работ, перемещения сыпучих материалов и уборки территории в стеснённых условиях: на фермах, складах, строительных площадках и в частных дворах.</p>
         <div class="cards">
           <article class="card">
             <span class="card-index">01</span>
-            <h3>Высокая манёвренность</h3>
-            <p>Компактные габариты и шарнирно-сочленённая рама («рамопереломка») обеспечивают малый радиус разворота и эффективную работу в ограниченном пространстве: в животноводческих помещениях, между постройками, на узких проездах.</p>
+            <h3 data-i18n="card1.title">Высокая манёвренность</h3>
+            <p data-i18n="card1.body">Компактные габариты и шарнирно-сочленённая рама («рамопереломка») обеспечивают малый радиус разворота и эффективную работу в ограниченном пространстве: в животноводческих помещениях, между постройками, на узких проездах.</p>
           </article>
           <article class="card">
             <span class="card-index">02</span>
-            <h3>Низкое давление на грунт</h3>
-            <p>Эксплуатационная масса около 800&nbsp;кг позволяет работать на чувствительных покрытиях — брусчатке, тротуарной плитке, резиновом покрытии — без риска их повреждения.</p>
+            <h3 data-i18n="card2.title">Низкое давление на грунт</h3>
+            <p data-i18n="card2.body">Эксплуатационная масса около 800&nbsp;кг позволяет работать на чувствительных покрытиях — брусчатке, тротуарной плитке, резиновом покрытии — без риска их повреждения.</p>
           </article>
           <article class="card">
             <span class="card-index">03</span>
-            <h3>Экономичный дизельный двигатель</h3>
-            <p>Двигатель Changjia CJ32M мощностью 25&nbsp;л.с. (около 18,4&nbsp;кВт) с жидкостным охлаждением через радиатор. Предпусковой подогреватель от сети 220&nbsp;В обеспечивает уверенный запуск в зимний период.</p>
+            <h3 data-i18n="card3.title">Экономичный дизельный двигатель</h3>
+            <p data-i18n="card3.body">Двигатель Changjia CJ32M мощностью 25&nbsp;л.с. (около 18,4&nbsp;кВт) с жидкостным охлаждением через радиатор. Предпусковой подогреватель от сети 220&nbsp;В обеспечивает уверенный запуск в зимний период.</p>
           </article>
           <article class="card">
             <span class="card-index">04</span>
-            <h3>Простота обслуживания</h3>
-            <p>Несложная конструкция снижает затраты на техническое обслуживание и сокращает время простоя.</p>
+            <h3 data-i18n="card4.title">Простота обслуживания</h3>
+            <p data-i18n="card4.body">Несложная конструкция снижает затраты на техническое обслуживание и сокращает время простоя.</p>
           </article>
           <article class="card">
             <span class="card-index">05</span>
-            <h3>Полный привод и усиленные мосты</h3>
-            <p>Полный привод 4×4 с механической трансмиссией через карданные валы. Полностью разгруженные мосты с масляными тормозами, шины 23×8.5-12.</p>
+            <h3 data-i18n="card5.title">Полный привод и усиленные мосты</h3>
+            <p data-i18n="card5.body">Полный привод 4×4 с механической трансмиссией через карданные валы. Полностью разгруженные мосты с масляными тормозами, шины 23×8.5-12.</p>
           </article>
           <article class="card">
             <span class="card-index">06</span>
-            <h3>Поставка, доставка и рассрочка</h3>
-            <p>Поступление партии в Астану — в начале декабря. Отправляем технику в регионы Казахстана. Доступна рассрочка, условия уточняйте по телефону. Стоимость — по запросу.</p>
+            <h3 data-i18n="card6.title">Поставка, доставка и рассрочка</h3>
+            <p data-i18n="card6.body">Поступление партии в Астану — в начале декабря. Отправляем технику в регионы Казахстана. Доступна рассрочка, условия уточняйте по телефону. Стоимость — по запросу.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="jk">
+      <div class="wrap">
+        <h2 data-i18n="jk.title">Для ЖК и бизнес-центров</h2>
+        <p class="section-lead" data-i18n="jk.lead">ADAL MODEL 907 — оптимальное решение для многоквартирных жилых комплексов (ЖК, МЖК) и бизнес-центров (БЦ): уборка снега и текущее благоустройство территории.</p>
+        <div class="cards">
+          <article class="card">
+            <h3 data-i18n="jk.save.title">Экономия средств</h3>
+            <p data-i18n="jk.save.body">Собственная компактная техника снижает расходы на сторонние услуги по уборке и содержанию территории.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="jk.staff.title">Независимость от персонала</h3>
+            <p data-i18n="jk.staff.body">Меньше потребность в наёмных работниках и нет зависимости от того, найдутся ли сезонные рабочие в нужный момент.</p>
           </article>
         </div>
       </div>
@@ -135,123 +176,123 @@
 
     <section class="section" id="specs">
       <div class="wrap">
-        <h2>Характеристики</h2>
-        <p class="section-lead">Только подтверждённые цифры. Габариты указаны ориентировочно.</p>
+        <h2 data-i18n="specs.title">Характеристики</h2>
+        <p class="section-lead" data-i18n="specs.lead">Только подтверждённые цифры. Габариты указаны ориентировочно.</p>
         <div class="stats">
-          <div class="stat"><b>500 кг</b><span>грузоподъёмность</span></div>
-          <div class="stat"><b>4×4</b><span>полный привод</span></div>
-          <div class="stat"><b>25 л.с.</b><span>дизель Changjia</span></div>
-          <div class="stat"><b>220 В</b><span>подогрев двигателя</span></div>
+          <div class="stat"><b>500 кг</b><span data-i18n="stat.capacity">грузоподъёмность</span></div>
+          <div class="stat"><b>4×4</b><span data-i18n="stat.drive">полный привод</span></div>
+          <div class="stat"><b data-i18n="stat.hp">25 л.с.</b><span data-i18n="stat.engine">дизель Changjia</span></div>
+          <div class="stat"><b>220 В</b><span data-i18n="stat.heater">подогрев двигателя</span></div>
         </div>
         <div class="spec-groups">
           <section class="spec-group">
-            <h3>Двигатель</h3>
+            <h3 data-i18n="spec.engine">Двигатель</h3>
             <dl class="specs">
-              <div><dt>Модель</dt><dd>Changjia CJ32M, дизель</dd></div>
-              <div><dt>Мощность</dt><dd>25 л.с. (≈ 18,4 кВт), диапазон 25–32 л.с.</dd></div>
-              <div><dt>Охлаждение</dt><dd>радиатор</dd></div>
-              <div><dt>Зимний запуск</dt><dd>предпусковой подогреватель от сети 220 В</dd></div>
+              <div><dt data-i18n="spec.model">Модель</dt><dd data-i18n="spec.modelVal">Changjia CJ32M, дизель</dd></div>
+              <div><dt data-i18n="spec.power">Мощность</dt><dd data-i18n="spec.powerVal">25 л.с. (≈ 18,4 кВт), диапазон 25–32 л.с.</dd></div>
+              <div><dt data-i18n="spec.cooling">Охлаждение</dt><dd data-i18n="spec.coolingVal">радиатор</dd></div>
+              <div><dt data-i18n="spec.winter">Зимний запуск</dt><dd data-i18n="spec.winterVal">предпусковой подогреватель от сети 220 В</dd></div>
             </dl>
           </section>
           <section class="spec-group">
-            <h3>Трансмиссия и привод</h3>
+            <h3 data-i18n="spec.transmission">Трансмиссия и привод</h3>
             <dl class="specs">
-              <div><dt>Привод</dt><dd>полный, 4×4, механический через валы</dd></div>
-              <div><dt>Мосты</dt><dd>полностью разгруженные, масляные тормоза</dd></div>
-              <div><dt>Шины</dt><dd>23×8.5-12</dd></div>
-              <div><dt>Рама</dt><dd>шарнирно-сочленённая</dd></div>
+              <div><dt data-i18n="spec.drive">Привод</dt><dd data-i18n="spec.driveVal">полный, 4×4, механический через валы</dd></div>
+              <div><dt data-i18n="spec.axles">Мосты</dt><dd data-i18n="spec.axlesVal">полностью разгруженные, масляные тормоза</dd></div>
+              <div><dt data-i18n="spec.tires">Шины</dt><dd>23×8.5-12</dd></div>
+              <div><dt data-i18n="spec.frame">Рама</dt><dd data-i18n="spec.frameVal">шарнирно-сочленённая</dd></div>
             </dl>
           </section>
           <section class="spec-group">
-            <h3>Гидравлика</h3>
+            <h3 data-i18n="spec.hydraulics">Гидравлика</h3>
             <dl class="specs">
-              <div><dt>Навесное</dt><dd>рычаги под оборудование</dd></div>
+              <div><dt data-i18n="spec.attachments">Навесное</dt><dd data-i18n="spec.attachmentsVal">рычаги под оборудование</dd></div>
             </dl>
           </section>
           <section class="spec-group">
-            <h3>Электрика</h3>
+            <h3 data-i18n="spec.electrics">Электрика</h3>
             <dl class="specs">
-              <div><dt>Аккумуляторы</dt><dd>два</dd></div>
+              <div><dt data-i18n="spec.batteries">Аккумуляторы</dt><dd data-i18n="spec.batteriesVal">два</dd></div>
             </dl>
           </section>
           <section class="spec-group">
-            <h3>Рабочие параметры</h3>
+            <h3 data-i18n="spec.work">Рабочие параметры</h3>
             <dl class="specs">
-              <div><dt>Грузоподъёмность</dt><dd>500 кг</dd></div>
-              <div><dt>Вес</dt><dd>около 800 кг</dd></div>
-              <div><dt>Ширина по колёсам</dt><dd>120 см</dd></div>
-              <div><dt>Длина (от кормы до кромки ковша)</dt><dd>около 3 м</dd></div>
-              <div><dt>Поступление</dt><dd>Астана, начало декабря</dd></div>
-              <div><dt>Доставка</dt><dd>в регионы Казахстана</dd></div>
-              <div><dt>Оплата</dt><dd>возможна рассрочка</dd></div>
+              <div><dt data-i18n="spec.capacity">Грузоподъёмность</dt><dd>500 кг</dd></div>
+              <div><dt data-i18n="spec.weight">Вес</dt><dd data-i18n="spec.weightVal">около 800 кг</dd></div>
+              <div><dt data-i18n="spec.width">Ширина по колёсам</dt><dd>120 см</dd></div>
+              <div><dt data-i18n="spec.length">Длина (от кормы до кромки ковша)</dt><dd data-i18n="spec.lengthVal">около 3 м</dd></div>
+              <div><dt data-i18n="spec.arrival">Поступление</dt><dd data-i18n="spec.arrivalVal">Астана, начало декабря</dd></div>
+              <div><dt data-i18n="spec.delivery">Доставка</dt><dd data-i18n="spec.deliveryVal">в регионы Казахстана</dd></div>
+              <div><dt data-i18n="spec.payment">Оплата</dt><dd data-i18n="spec.paymentVal">возможна рассрочка</dd></div>
             </dl>
           </section>
         </div>
-        <p class="note">Сенозахват в базовый комплект не входит. Другое навесное под гидравлические рычаги обсуждается отдельно.</p>
+        <p class="note" data-i18n="specs.note">Сенозахват в базовый комплект не входит. Другое навесное под гидравлические рычаги обсуждается отдельно.</p>
       </div>
     </section>
 
     <section class="section" id="gallery">
       <div class="wrap">
-        <h2>Фото</h2>
-        <p class="section-lead">Серийные машины — серый графит, на корпусе ADAL MODEL 907.</p>
+        <h2 data-i18n="gallery.title">Фото</h2>
+        <p class="section-lead" data-i18n="gallery.lead">Серийные машины — серый графит, на корпусе ADAL MODEL 907.</p>
 
         <div class="gallery">
           <figure class="shot">
-            <button type="button"><img src="assets/img/front-3q.jpg" width="1200" height="1600" alt="Серый мини-погрузчик ADAL MODEL 907, вид спереди сбоку, ковш поднят"></button>
+            <button type="button"><img src="assets/img/front-3q.jpg" width="1200" height="1600" alt="Серый мини-погрузчик ADAL MODEL 907, вид спереди сбоку, ковш поднят" data-i18n="alt.front3q" data-i18n-attr="alt"></button>
           </figure>
           <figure class="shot">
-            <button type="button"><img src="assets/img/side.jpg" width="1280" height="1600" alt="Стрела и ковш серого погрузчика, вид сбоку" loading="lazy"></button>
+            <button type="button"><img src="assets/img/side.jpg" width="1280" height="1600" alt="Стрела и ковш серого погрузчика, вид сбоку" data-i18n="alt.side" data-i18n-attr="alt" loading="lazy"></button>
           </figure>
           <figure class="shot">
-            <button type="button"><img src="assets/img/rear.jpg" width="1412" height="1600" alt="Серый мини-погрузчик ADAL MODEL 907, вид сзади" loading="lazy"></button>
+            <button type="button"><img src="assets/img/rear.jpg" width="1412" height="1600" alt="Серый мини-погрузчик ADAL MODEL 907, вид сзади" data-i18n="alt.rear" data-i18n-attr="alt" loading="lazy"></button>
           </figure>
           <figure class="shot">
-            <button type="button"><img src="assets/img/front-hydraulics.jpg" width="1200" height="1600" alt="Гидроцилиндры и шланги в передней части рамы" loading="lazy"></button>
+            <button type="button"><img src="assets/img/front-hydraulics.jpg" width="1200" height="1600" alt="Гидроцилиндры и шланги в передней части рамы" data-i18n="alt.hydraulics" data-i18n-attr="alt" loading="lazy"></button>
           </figure>
           <figure class="shot">
-            <button type="button"><img src="assets/img/front-frame.jpg" width="1200" height="1600" alt="Передняя полурама, колесо и гидроцилиндр" loading="lazy"></button>
+            <button type="button"><img src="assets/img/front-frame.jpg" width="1200" height="1600" alt="Передняя полурама, колесо и гидроцилиндр" data-i18n="alt.frame" data-i18n-attr="alt" loading="lazy"></button>
           </figure>
           <figure class="shot">
-            <button type="button"><img src="assets/img/boom.jpg" width="1600" height="1333" alt="Стрела и ковш крупным планом" loading="lazy"></button>
+            <button type="button"><img src="assets/img/boom.jpg" width="1600" height="1333" alt="Стрела и ковш крупным планом" data-i18n="alt.boom" data-i18n-attr="alt" loading="lazy"></button>
           </figure>
           <figure class="shot">
-            <button type="button"><img src="assets/img/engine.jpg" width="1200" height="1600" alt="Дизельный двигатель и аккумуляторы" loading="lazy"></button>
+            <button type="button"><img src="assets/img/engine.jpg" width="1200" height="1600" alt="Дизельный двигатель и аккумуляторы" data-i18n="alt.engine" data-i18n-attr="alt" loading="lazy"></button>
           </figure>
           <figure class="shot">
-            <button type="button"><img src="assets/img/engine-starter.jpg" width="1200" height="1600" alt="Двигатель, вид со стороны стартера" loading="lazy"></button>
+            <button type="button"><img src="assets/img/engine-starter.jpg" width="1200" height="1600" alt="Двигатель, вид со стороны стартера" data-i18n="alt.starter" data-i18n-attr="alt" loading="lazy"></button>
           </figure>
           <figure class="shot">
-            <button type="button"><img src="assets/img/radiator.jpg" width="1200" height="1600" alt="Радиатор и выхлоп" loading="lazy"></button>
+            <button type="button"><img src="assets/img/radiator.jpg" width="1200" height="1600" alt="Радиатор и выхлоп" data-i18n="alt.radiator" data-i18n-attr="alt" loading="lazy"></button>
           </figure>
           <figure class="shot">
-            <button type="button"><img src="assets/img/engine-side.jpg" width="1455" height="1600" alt="Двигатель сбоку, под защитным кожухом" loading="lazy"></button>
+            <button type="button"><img src="assets/img/engine-side.jpg" width="1455" height="1600" alt="Двигатель сбоку, под защитным кожухом" data-i18n="alt.engineSide" data-i18n-attr="alt" loading="lazy"></button>
           </figure>
           <figure class="shot">
-            <button type="button"><img src="assets/img/cockpit.jpg" width="1200" height="1600" alt="Руль, педали и рычаги" loading="lazy"></button>
+            <button type="button"><img src="assets/img/cockpit.jpg" width="1200" height="1600" alt="Руль, педали и рычаги" data-i18n="alt.cockpit" data-i18n-attr="alt" loading="lazy"></button>
           </figure>
           <figure class="shot">
-            <button type="button"><img src="assets/img/controls.jpg" width="1200" height="1600" alt="Рычаги гидравлики" loading="lazy"></button>
+            <button type="button"><img src="assets/img/controls.jpg" width="1200" height="1600" alt="Рычаги гидравлики" data-i18n="alt.controls" data-i18n-attr="alt" loading="lazy"></button>
           </figure>
           <figure class="shot">
-            <button type="button"><img src="assets/img/seat.jpg" width="1200" height="1600" alt="Сиденье оператора" loading="lazy"></button>
+            <button type="button"><img src="assets/img/seat.jpg" width="1200" height="1600" alt="Сиденье оператора" data-i18n="alt.seat" data-i18n-attr="alt" loading="lazy"></button>
           </figure>
         </div>
 
         <div class="gallery-block" id="video">
-          <p class="gallery-label">Видео</p>
+          <p class="gallery-label" data-i18n="video.label">Видео</p>
           <div class="videos">
             <figure class="video-card">
               <video controls preload="none" playsinline poster="assets/video/drive.jpg">
                 <source src="assets/video/drive.mp4" type="video/mp4">
               </video>
-              <p>На ходу</p>
+              <p data-i18n="video.drive">На ходу</p>
             </figure>
             <figure class="video-card">
               <video controls preload="none" playsinline poster="assets/video/controls.jpg">
                 <source src="assets/video/controls.mp4" type="video/mp4">
               </video>
-              <p>Управление</p>
+              <p data-i18n="video.controls">Управление</p>
             </figure>
           </div>
         </div>
@@ -260,33 +301,33 @@
 
     <section class="section" id="use">
       <div class="wrap">
-        <h2>Где пригодится</h2>
-        <p class="section-lead">Ковш и полный привод закрывают повседневные работы хозяйства. Захват для тюков в комплект не входит.</p>
+        <h2 data-i18n="use.title">Где пригодится</h2>
+        <p class="section-lead" data-i18n="use.lead">Ковш и полный привод закрывают повседневные работы хозяйства. Захват для тюков в комплект не входит.</p>
         <div class="uses">
           <article class="use use-wide">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21V8"/><path d="M12 14c-3.2-.6-5-3.2-5-3.2 1.6 2.2 5 3.2 5 3.2"/><path d="M12 12c3.2-.6 5-3.2 5-3.2-1.6 2.2-5 3.2-5 3.2"/><path d="M12 9.5c-2.4-.5-3.8-2.6-3.8-2.6 1.2 1.8 3.8 2.6 3.8 2.6"/><path d="M12 9c2.4-.5 3.8-2.6 3.8-2.6C14.6 8.2 12 9 12 9"/></svg>
-            <h3>Решение для домохозяйств</h3>
-            <p>Подача сена и кормов, уборка навоза и погрузка его в прицеп — без лишних заездов трактора. Сенозахват приобретается отдельно.</p>
+            <h3 data-i18n="use.household.title">Решение для домохозяйств</h3>
+            <p data-i18n="use.household.body">Подача сена и кормов, уборка навоза и погрузка его в прицеп — без лишних заездов трактора. Сенозахват приобретается отдельно.</p>
           </article>
           <article class="use">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v9h14v-9"/><path d="M9 19v-6h6v6"/></svg>
-            <h3>Ферма</h3>
-            <p>Сыпучие корма, зерно и грунт на территории хозяйства.</p>
+            <h3 data-i18n="use.farm.title">Ферма</h3>
+            <p data-i18n="use.farm.body">Сыпучие корма, зерно и грунт на территории хозяйства.</p>
           </article>
           <article class="use">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18"/><path d="M5 20V10l4-2v12"/><path d="M9 20V7l6-3v16"/><path d="M15 20V9l4-1v12"/></svg>
-            <h3>Стройка</h3>
-            <p>Песок, щебень и мусор на небольшой площадке.</p>
+            <h3 data-i18n="use.build.title">Стройка</h3>
+            <p data-i18n="use.build.body">Песок, щебень и мусор на небольшой площадке.</p>
           </article>
           <article class="use">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v4"/><path d="M12 17v4"/><path d="m5 6 3 3"/><path d="m16 15 3 3"/><path d="M3 12h4"/><path d="M17 12h4"/><path d="m5 18 3-3"/><path d="m16 9 3-3"/></svg>
-            <h3>Снег</h3>
-            <p>Расчистка двора и подъезда ковшом.</p>
+            <h3 data-i18n="use.snow.title">Снег</h3>
+            <p data-i18n="use.snow.body">Расчистка двора и подъезда ковшом.</p>
           </article>
           <article class="use">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18v11H3z"/><path d="M3 9 7 4h10l4 5"/><path d="M9 20v-6h6v6"/></svg>
-            <h3>Склад</h3>
-            <p>Сыпучие в ангаре и на площадке, где большой погрузчик не развернётся.</p>
+            <h3 data-i18n="use.warehouse.title">Склад</h3>
+            <p data-i18n="use.warehouse.body">Сыпучие в ангаре и на площадке, где большой погрузчик не развернётся.</p>
           </article>
         </div>
       </div>
@@ -297,25 +338,25 @@
         <div class="order">
           <div class="order-grid">
             <div>
-              <h2>Забронировать погрузчик</h2>
-              <p class="section-lead">Партия прибывает в Астану в начале декабря. Позвоните или напишите в WhatsApp — назовём цену, условия рассрочки и стоимость доставки в ваш регион.</p>
+              <h2 data-i18n="order.title">Забронировать погрузчик</h2>
+              <p class="section-lead" data-i18n="order.lead">Партия прибывает в Астану в начале декабря. Позвоните или напишите в WhatsApp — назовём цену, условия рассрочки и стоимость доставки в ваш регион.</p>
               <a class="phone-big" href="tel:+77003330999">8 700 333 0 999</a>
               <div class="order-actions">
-                <a class="btn btn-red" href="tel:+77003330999">Позвонить</a>
-                <a class="btn btn-wa" href="https://wa.me/77003330999" target="_blank" rel="noopener">WhatsApp</a>
+                <a class="btn btn-red" href="tel:+77003330999" data-i18n="btn.call">Позвонить</a>
+                <a class="btn btn-wa" href="https://wa.me/77003330999" target="_blank" rel="noopener" data-i18n="btn.wa">WhatsApp</a>
               </div>
             </div>
             <form class="form" id="lead-form">
-              <label>Имя
+              <label><span data-i18n="form.name">Имя</span>
                 <input name="name" autocomplete="name" maxlength="80">
               </label>
-              <label>Телефон
+              <label><span data-i18n="form.phone">Телефон</span>
                 <input name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="+7">
               </label>
-              <label>Задача
-                <textarea name="task" maxlength="400" placeholder="Ферма, корма, стройка, снег — что будете грузить"></textarea>
+              <label><span data-i18n="form.task">Задача</span>
+                <textarea name="task" maxlength="400" placeholder="Ферма, корма, стройка, снег — что будете грузить" data-i18n="form.taskPh" data-i18n-attr="placeholder"></textarea>
               </label>
-              <button class="btn btn-wa btn-block" type="submit">Написать в WhatsApp</button>
+              <button class="btn btn-wa btn-block" type="submit" data-i18n="form.submit">Написать в WhatsApp</button>
             </form>
           </div>
         </div>
@@ -325,18 +366,19 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <div><span class="footer-brand">ADAL</span> · MODEL 907 · мини-погрузчик</div>
+      <div><span class="footer-brand">ADAL</span> · MODEL 907 · <span data-i18n="footer.tag">мини-погрузчик</span></div>
       <a href="tel:+77003330999">8 700 333 0 999</a>
     </div>
   </footer>
 
   <div class="lightbox" id="lightbox" hidden>
-    <button class="lb-btn lb-close" type="button" aria-label="Закрыть">×</button>
-    <button class="lb-btn lb-prev" type="button" aria-label="Предыдущее фото">‹</button>
+    <button class="lb-btn lb-close" type="button" aria-label="Закрыть" data-i18n="lb.close" data-i18n-attr="aria-label">×</button>
+    <button class="lb-btn lb-prev" type="button" aria-label="Предыдущее фото" data-i18n="lb.prev" data-i18n-attr="aria-label">‹</button>
     <img alt="">
-    <button class="lb-btn lb-next" type="button" aria-label="Следующее фото">›</button>
+    <button class="lb-btn lb-next" type="button" aria-label="Следующее фото" data-i18n="lb.next" data-i18n-attr="aria-label">›</button>
   </div>
 
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

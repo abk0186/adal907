@@ -53,10 +53,11 @@ form.addEventListener('submit', (event) => {
   const name = String(data.get('name') || '').trim();
   const phone = String(data.get('phone') || '').trim();
   const task = String(data.get('task') || '').trim();
-  const lines = ['Здравствуйте! Интересует мини-погрузчик ADAL MODEL 907.'];
-  if (name) lines.push(`Имя: ${name}`);
-  if (phone) lines.push(`Телефон: ${phone}`);
-  if (task) lines.push(`Задача: ${task}`);
+  const tr = (key, fallback) => (window.adalT ? window.adalT(key) : fallback);
+  const lines = [tr('wa.intro', 'Здравствуйте! Интересует мини-погрузчик ADAL MODEL 907.')];
+  if (name) lines.push(`${tr('wa.name', 'Имя')}: ${name}`);
+  if (phone) lines.push(`${tr('wa.phone', 'Телефон')}: ${phone}`);
+  if (task) lines.push(`${tr('wa.task', 'Задача')}: ${task}`);
   const url = `https://wa.me/77003330999?text=${encodeURIComponent(lines.join('\n'))}`;
   const mobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
   if (mobile) {
