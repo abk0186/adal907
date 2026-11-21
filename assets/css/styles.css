@@ -546,8 +546,7 @@ h3 { font-size: 1.12rem; font-weight: 800; letter-spacing: -0.02em; }
   gap: 12px;
 }
 .form label { display: grid; gap: 6px; font-weight: 700; font-size: 14px; }
-.form input,
-.form textarea {
+.form input {
   width: 100%;
   border: 1px solid #d5d8dc;
   border-radius: 12px;
@@ -555,9 +554,7 @@ h3 { font-size: 1.12rem; font-weight: 800; letter-spacing: -0.02em; }
   background: #fafbfc;
   min-height: 48px;
 }
-.form textarea { min-height: 96px; resize: vertical; }
-.form input:focus,
-.form textarea:focus {
+.form input:focus {
   outline: 2px solid var(--red);
   border-color: transparent;
   background: white;
