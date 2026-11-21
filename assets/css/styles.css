@@ -673,6 +673,113 @@ h3 { font-size: 1.12rem; font-weight: 800; letter-spacing: -0.02em; }
 .text-link:hover { color: var(--red-dark); }
 .jk-calc-link { margin: 22px 0 0; }
 
+.save-highlights {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0 22px;
+}
+.save-hl {
+  background: var(--graphite);
+  color: white;
+  border-radius: 16px;
+  padding: 20px 18px 16px;
+}
+.save-hl strong {
+  display: block;
+  font-size: clamp(1.7rem, 6vw, 2.35rem);
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+.save-hl p {
+  margin: 8px 0 0;
+  color: #d5d8dc;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.save-visual {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 16px 16px;
+  margin-bottom: 20px;
+}
+.save-crew {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.save-crew-side {
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+  text-align: center;
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--graphite);
+  flex: 1;
+}
+.save-people {
+  display: flex;
+  gap: 2px;
+  color: var(--graphite);
+}
+.save-people svg { width: 28px; height: 28px; }
+.save-loader { color: var(--red); }
+.save-loader svg { width: 64px; height: 38px; }
+.save-vs {
+  flex: 0 0 auto;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--muted);
+}
+.save-cost-bars { margin: 0; }
+
+.calc-details {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+}
+.calc-details summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 700;
+  padding: 14px 16px;
+  color: var(--graphite);
+}
+.calc-details summary::-webkit-details-marker { display: none; }
+.calc-details summary::after {
+  content: "+";
+  float: right;
+  color: var(--muted);
+  font-weight: 800;
+}
+.calc-details[open] summary::after { content: "–"; }
+.calc-details .calc {
+  border: 0;
+  border-radius: 0 0 var(--radius) var(--radius);
+  margin: 0;
+  padding: 0 16px 16px;
+  background: transparent;
+}
+
+.save-foot {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+  max-width: 42rem;
+}
+
+@media (min-width: 720px) {
+  .save-highlights { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+
 
 .calc-steps {
   margin: 0 0 28px;

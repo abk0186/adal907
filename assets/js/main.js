@@ -93,9 +93,13 @@ function updateSavingsCalc() {
   const monthly = Math.max(0, workers * salary - OPERATOR_WAGE);
   calcMonth.textContent = formatTenge(monthly);
   calcYear.textContent = formatTenge(monthly * months);
-  calcNote.textContent = monthly > 0
-    ? tr("calc.note", "Валовая экономия на оплате труда до расходов на топливо и обслуживание.")
-    : tr("calc.zero", "При этих значениях экономии на оплате труда нет: фонд заменённых рабочих не выше зарплаты оператора.");
+  if (monthly > 0) {
+    calcNote.hidden = true;
+    calcNote.textContent = "";
+  } else {
+    calcNote.hidden = false;
+    calcNote.textContent = tr("calc.zero", "При этих значениях экономии на оплате труда нет: фонд рабочих не выше зарплаты оператора.");
+  }
 }
 
 if (calcForm) {
